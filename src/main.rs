@@ -7,8 +7,6 @@ fn main() {
     println!("数を当ててみよう！");
 
     let secret_number = rand::thread_rng().gen_range(1..=100);   //memo：上限値を含まないため普通に書くと101と書かないと100までを乱数に含めることができない
-
-    println!("秘密の数字： {}", secret_number);
     
     loop {
         println!("予想を入力しよう！");
