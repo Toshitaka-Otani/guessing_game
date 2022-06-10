@@ -19,8 +19,10 @@ fn main() {
             .read_line(&mut guess)
             .expect("読み込みに失敗しました。");
         
-        let guess: u32 = guess.trim().parse()
-            .expect("数値を入力してください。");
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
         
         println!("あなたの予想： {}", guess);
     
